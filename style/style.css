@@ -1,0 +1,26 @@
+.card-text-m{
+    height: 100px;
+    overflow-y: hidden;
+}
+.card-text-m:hover{
+    overflow-y: scroll;
+}
+.instruct{
+
+    overflow: hidden;
+}
+.instruct:hover{
+    overflow-y: scroll;
+}
+.login{
+    height: 400px;
+    margin-left: 1px;
+    width: inherit;
+    background-image:url(../image/vegetables-752153_1280.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}
+.first{
+    margin-top: 50px;
+}
