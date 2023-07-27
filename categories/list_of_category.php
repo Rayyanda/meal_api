@@ -9,7 +9,7 @@ if(isset($_GET['category'])){
     $url_detail = $url_detail_category.$_GET['category'];
     $list = file_get_contents($url_detail);
     $list= json_decode($list,true);
-    unset($_SESSION['last_search']);
+    $_SESSION['last_search'] = $_GET['category'];
     //echo $url_detail;
 
 ?>
