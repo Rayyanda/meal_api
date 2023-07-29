@@ -9,7 +9,9 @@ if(isset($_GET['category'])){
     $url_detail = $url_detail_category.$_GET['category'];
     $list = file_get_contents($url_detail);
     $list= json_decode($list,true);
-    $_SESSION['last_search'] = $_GET['category'];
+    unset($_SESSION['last_search']);
+    $_SESSION['last_cora'] = "categories";
+    $_SESSION['last_cora_v'] = $_GET['category'];
     //echo $url_detail;
 
 ?>
@@ -21,7 +23,7 @@ if(isset($_GET['category'])){
 <body>
     <div class="container-lg">
     <a href="./" class="btn btn-outline-primary mt-1"><i class="fa-solid fa-arrow-left"></i> Back</a>
-    <h5>List of <?= $_GET['category'];  ?></h5>
+    <h5>List of <?= $_GET['category'];  ?> Meal</h5>
         <?php
             $data = $list['meals'];
             for ($i = 0; $i < count($list['meals']); $i++) {

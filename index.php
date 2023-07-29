@@ -13,7 +13,7 @@ $categories = json_decode($categories,true);
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <div class="container-lg">
+    <div class="container-lg mt-5 pt-3">
         <div class="row login text-center">
             <div class="col-lg-12  text-white ">
                 <div class="first">

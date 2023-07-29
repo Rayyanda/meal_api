@@ -7,10 +7,7 @@
 }
 .instruct{
 
-    overflow: hidden;
-}
-.instruct:hover{
-    overflow-y: scroll;
+    overflow: auto;
 }
 .login{
     height: 400px;
@@ -23,4 +20,8 @@
 }
 .first{
     margin-top: 50px;
+}
+.dropdown-menu{
+    max-height: 550px;
+    overflow: auto;
 }

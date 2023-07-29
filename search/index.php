@@ -72,10 +72,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST" || isset($_SESSION['last_search'])){
                 echo "<h5>Unknown Category is selected</h5>";
             }
         }else{
-            echo "no post";
+            echo '<a href="../" class="btn btn-primary">Back</a>';
         }
         ?>
         </div>
+        
     </div>
     <?php include "../helper/footer.php"; ?>
 </body>

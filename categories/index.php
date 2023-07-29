@@ -11,13 +11,7 @@ unset($_SESSION['last_search']);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
-        function modal_details(name, strThumb, detail) {
-            $('#modalHeader').html(`<h5 class="modal-title">${name}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`);
-            $('#modalBody').html(`<img src="${strThumb}" alt="Gambar Produk"><h5 class="mb-1">${name}</h5><p>${detail}</p>`);
-            $('#modalFooter').html(`<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><a class="btn btn-outline-primary" href="#" >See all</a>`)
-        }
-    </script>
+
 </head>
 <body>
     <div class="container-lg">
@@ -55,7 +49,6 @@ unset($_SESSION['last_search']);
                             </div>
                         </div>
                     </div>
-                
                 <?php
                 if ($i % 4 == 3 || $i == count($categories['categories']) - 1) {
                     echo '</div>';

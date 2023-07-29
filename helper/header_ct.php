@@ -16,6 +16,7 @@ $area = json_decode($area,true);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../../../cookies/crud_2022240029/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../cookies/crud_2022240029/fontawesome-free-6.4.0-web/css/fontawesome.min.css">
     <link rel="stylesheet" href="../../../cookies/crud_2022240029/fontawesome-free-6.4.0-web/css/all.min.css">
@@ -26,47 +27,51 @@ $area = json_decode($area,true);
     <title>Meal</title>
 </head>
 <body>
-    <div class="container-lg">
-        <nav class="navbar bg-dark rounded navbar-expand-lg" data-bs-theme="dark" >
-            <div class="container-fluid">
-                <a class="navbar-brand" href="../">Meal</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Categories
-                            </a>
-                            <ul class="dropdown-menu">
-                                <?php
-                                    foreach ($categories['meals'] as $value) { ?>
-                                        <li><a class="dropdown-item" href="../route.php?cc=<?= $value['strCategory']?>"><?= $value['strCategory']; ?></a></li>
-                                 <?php } ?>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="../route.php?o=lc">See detail of category</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown ">
-                            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                                Area
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-right w-50" style="max-width: 100px;">
-                                <?php foreach($area['meals'] as $value){ ?>
-                                    <li><a class="dropdown-item" href="../route.php?area=<?= $value['strArea']; ?>"><?= $value['strArea']; ?></a></li>
-                                <?php } ?>
-                            </ul>
-                        </li>
-
-                    </ul>
-                    <form class="d-flex" role="search" method="post" action="../search/" >
-                        <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
+    <nav class="navbar sticky-top bg-dark navbar-expand-lg border-bottom" data-bs-theme="dark" >
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../">Meal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <?php
+                                foreach ($categories['meals'] as $value) { ?>
+                                    <li><a class="dropdown-item" href="../route.php?cc=<?= $value['strCategory']?>"><?= $value['strCategory']; ?></a></li>
+                             <?php } ?>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../route.php?o=lc">See detail of category</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Area
+                        </a>
+                        <ul class="dropdown-menu">
+                            <?php
+                                foreach ($area['meals'] as $value) { ?>
+                                    <li><a class="dropdown-item" href="../route.php?area=<?= $value['strArea']?>"><?= $value['strArea']; ?></a></li>
+                             <?php } ?>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about/">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contacts/">Contacts</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search" method="post" action="../search/" >
+                    <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
 </body>
 </html>

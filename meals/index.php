@@ -18,8 +18,23 @@ if(isset($_GET['idMeal'])){
 
 </head>
 <body>
-    <div class="container-lg">
-        <a href="<?php if(isset($_SESSION['last_search'])){echo"../search/";}else{echo"../categories/";} ?>" class="btn btn-outline-primary mt-2"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    <div class="container-lg ">
+    <?php 
+        $go_to = "";
+        if(isset($_SESSION['last_search'])){
+            $go_to = "../search/";
+        }else{
+            if(isset($_SESSION['last_cora'])){
+                if($_SESSION['last_cora'] == "areas"){
+                    $go_to = "../" . $_SESSION['last_cora'] ."/?area=" .$_SESSION['last_cora_v'];
+                }
+                if($_SESSION['last_cora'] == "categories"){
+                    $go_to = "../".$_SESSION['last_cora']."/list_of_category.php?category=".$_SESSION['last_cora_v'];
+                }
+            }
+        } 
+    ?>
+        <a href="<?= $go_to ?>" class="btn btn-outline-primary mt-2"><i class="fa-solid fa-arrow-left"></i> Back</a>
         <div class="row">
             <?php foreach ($meal['meals'] as $value) {?>
             <div class="col-lg-6">
@@ -87,23 +102,27 @@ if(isset($_GET['idMeal'])){
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <th scope="row" >Video</th>
-                                        <td>:</td>
+                                        <!-- <th scope="row" >Video</th>
+                                        <td>:</td> -->
                                         <td>
                                             <?php if($value['strYoutube'] != "" || $value['strYoutube'] != null ){ 
                                                 $url_video = $value['strYoutube']; 
                                                 try {
                                                     $oembed_url = "https://www.youtube.com/oembed?url=".urlencode($url_video);
-                                                    if(file_exists($oembed_url)){
-                                                        $response = file_get_contents($oembed_url);
+                                                    if($response = file_get_contents($oembed_url."&format=json&maxwidth=422&maxheight=237")){
+                                                        
                                                         $json_data = json_decode($response,true);
                                                         $embed_code = $json_data['html'];
-                                                        echo $embed_code;
+                                                        if($embed_code != null){
+                                                            echo $embed_code;
+                                                        }else{
+                                                            echo "This file is not exist";
+                                                        }
                                                     }else{
                                                         echo "This Video is not available";
                                                     }
                                                 } catch (Throwable $th) {
-                                                    echo "This Video is not available";
+                                                    echo "This Video is not available. Something error ";
                                                 }
                                                 ?>
                                             <?php }else{ ?>
@@ -112,9 +131,8 @@ if(isset($_GET['idMeal'])){
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row" >Ingredients</th>
-                                        <td>:</td>
                                         <td>
+                                            <h5>Ingredients :</h5>
                                             <?php for ($i=1; $i <= 20; $i++) { 
                                                 if($value["strIngredient".$i] == ""){
                                                     break;
@@ -124,9 +142,8 @@ if(isset($_GET['idMeal'])){
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row" >Instructions</th>
-                                        <td>:</td>
                                         <td>
+                                            <h5>Instructions :</h5>
                                             <div class="instruct">
                                                 <?= $value['strInstructions']; ?>
                                             </div>

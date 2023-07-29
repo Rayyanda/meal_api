@@ -15,7 +15,7 @@ $area = json_decode($area,true);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
-    <link rel="shortcut icon" href="../utensils-solid.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="utensils-solid.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../cookies/crud_2022240029/fontawesome-free-6.4.0-web/css/fontawesome.min.css">
     <link rel="stylesheet" href="../../../cookies/crud_2022240029/fontawesome-free-6.4.0-web/css/all.min.css">
@@ -25,7 +25,7 @@ $area = json_decode($area,true);
 </head>
 <body>
     <div class="container-lg">
-        <nav class="navbar navbar-expand-lg bg-dark border-bottom rounded" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg bg-dark border-bottom fixed-top" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Meal</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,10 +57,10 @@ $area = json_decode($area,true);
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="about/">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contacts</a>
+                            <a class="nav-link" href="contacts/">Contacts</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search" method="post" action="search/" >

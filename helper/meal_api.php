@@ -8,4 +8,4 @@ $url_detail_area = "https://www.themealdb.com/api/json/v1/1/filter.php?a=";
 $url_detail_meal = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
 $url_search_api = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 $url_single_random_meal = "https://www.themealdb.com/api/json/v1/1/random.php";
-
+$url_ingredients = "https://www.themealdb.com/api/json/v1/1/list.php?i=list";

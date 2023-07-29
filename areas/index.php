@@ -10,6 +10,8 @@ if(isset($_GET['area'])){
     $list = file_get_contents($url_detail);
     $list= json_decode($list,true);
     unset($_SESSION['last_search']);
+    $_SESSION['last_cora'] = "areas";
+    $_SESSION['last_cora_v'] = $_GET['area'];
     //echo $url_detail;
   
 
