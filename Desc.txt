@@ -1,0 +1,21 @@
+Untuk menggunakan web ini secara lokal di laptop anda, silahkan lakukan cara-cara berikut.
+
+1. Pastikan anda sudah menginstal XAMPP untuk menjalankannya, atau setidaknya Apache dan Mysql
+2. Simpan semua file dan folder disini dalam satu folder. Jika sudah mengistal XAMPP, Anda bisa menyimpannya di folder htdocs
+   dengan nama yang anda inginkan.
+3. Untuk icon-icon dari bootstrap dan font-awesome 4, anda bisa mendownloadnya di link 
+    https://drive.google.com/drive/folders/1q78BmFeYTHvBB0s4cptYtJvZqJfan82J?usp=sharing atau di website resmi masing masing icon
+4. Untuk icon-icon dari font-awesome 5, anda bisa unduh di website resminya.
+5. simpan folder icon di folder yang sama dengan web ini
+6. Lalu, sesuaikan link font nya, atau anda bisa lihat dokumentasi nya langsung di website resminya masing masing icon
+7. buat lah sebuah tabel dalam database, dengan ketentuan 
+    id (int) Auto Increment Primary Key
+    username (text)
+    comment (text)
+    date (date)
+    time (time)
+Disini hanya menggunakan satu tabel saja.
+8. Silahkan konfigurasi database sesuai dengan yang anda miliki.
+9. selebihnya bisa anda tanyakan ke saya melalui social media saya
+
+Terimakasih 
